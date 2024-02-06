@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PokeWiki</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
+        <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/estilos.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="/assets/images/favicon-32x32.png" alt="" class="rounded img-thumbnail"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse text-center" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fa-solid fa-house">   Inicio</i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="mostrarRegiones()"><i class="fa-solid fa-earth-europe">   Regiones</i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="mostrarPokes()"><i class="fa-solid fa-dragon"> Pokemon</i></a>
+                  </li>
+                </ul>
+                <form class="d-flex ms-auto" role="search" onsubmit="buscarPokemon(event)">
+                    <input id="inputBusqueda" class="form-control me-2" type="search" placeholder="Buscar" aria-label="search">
+                    <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                  </form>
+              </div>
+            </div>
+          </nav>
+        </br>
+        <div id="main">
+<h1 class="text-center">Bienvenido a PokeWiki, la página en la que encontrar toda la <i class="fas fa-info-circle"></i> para crear el equipo Pokemon perfecto</h1>
+        <br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <section id="intro" class="d-flex justify-content-start flex-column text-center">
+                <h2 class="titulo">Regiones</h2>
+                <img src="/assets/images/regiones.jpg" alt="" class="img-fluid rounded">
+                <p>Visita las regiones y los Pokemon que las habitan.</p>
+                <button class="btn" onclick="mostrarRegiones()" type="button"><i class="fa-solid fa-diamond-turn-right fa-2x"></i></button>
+            </section>
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-center">Regiones destacatas:</h2>
+            <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="d-flex justify-content-center card-container">
+                        <div class="card" style="width: 18rem;">
+                            <img id="fotReg1" src="" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 id="reg1" class="card-title"></h5>
+                                <a href="#" id="regreandom1" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex justify-content-center card-container">
+                        <div class="card" style="width: 18rem;">
+                            <img id="fotReg2" src="" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 id="reg2" class="card-title"></h5>
+                                <a href="#" id="regreandom2" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex justify-content-center card-container">
+                        <div class="card" style="width: 18rem;">
+                            <img id="fotReg3" src="" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 id="reg3" class="card-title">Card title</h5>
+                                <a href="#" id="regreandom3" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center">Pokemon destacados:</h2>
+            <div id="carousel2" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="d-flex justify-content-center card-container">
+                        <div class="card" style="width: 18rem;">
+                            <img id="pokefoto1" src="" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 id="pok1" class="card-title"></h5>
+                                <p class="card-text" id="Primary"></p>
+                                <a href="#" id="btn1" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex justify-content-center card-container">
+                      <div class="card" style="width: 18rem;">
+                          <img id="pokefoto2" src="" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 id="pok2" class="card-title"></h5>
+                              <p class="card-text" id="Primary2"></p>
+                              <a href="#" id="btn2" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="d-flex justify-content-center card-container">
+                      <div class="card" style="width: 18rem;">
+                          <img id="pokefoto3" src="" class="card-img-top" alt="...">
+                          <div class="card-body">
+                              <h5 id="pok3" class="card-title"></h5>
+                              <p class="card-text" id="Primary3"></p>
+                              <a href="#" id="btn3" class="btn btn-primary"><i class="fa-solid fa-eye"></i></a>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+        <div class="col-md-6">
+            <section id="intro2" class="d-flex justify-content-end flex-column text-center">
+                <h2 class="titulo">Pokemon</h2>
+                <img src="/assets/images/pokemon.jpg" alt="" class="img-fluid rounded">
+                <p>Revisa las estadísticas de los Pokemon y los movimientos que aprenden.</p>
+                <button class="btn" type="button" onclick="mostrarPokes()"><i class="fa-solid fa-diamond-turn-right fa-2x"></i></button>
+            </section>
+        </div>
+    </div>
+</div>
+</div>
+<div id="detallesPokemonElement"></div>
+<div id="regiones">
+  <h1 class="text-center">Selecciona la región Pokemon que quieras revisar y consulta el tiempo actual en la zona.</h1>
+  <br>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/kanto.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Kanto</h5>
+            <p class="card-text">Loa Pokedex de Kanto</p>
+            <a href="#" onclick="mostrarRegion('kanto')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/johto.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Johto</h5>
+            <p class="card-text">La Pokedex de Johto.</p>
+            <a href="#" onclick="mostrarRegion('johto')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/hoenn.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hoenn</h5>
+            <p class="card-text">La Pokedex de Hoenn.</p>
+            <a href="#" onclick="mostrarRegion('hoenn')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/sinnoh.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Sinnoh</h5>
+            <p class="card-text">La Pokedex de Sinnoh.</p>
+            <a href="#" onclick="mostrarRegion('sinnoh')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/unova.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Unova</h5>
+            <p class="card-text">La Pokedex de Unova.</p>
+            <a href="#" onclick="mostrarRegion('unova')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/kalos.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Kalos</h5>
+            <p class="card-text">La Pokedex de Kalos.</p>
+            <a href="#" onclick="mostrarRegion('kalos')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/alola.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Alola</h5>
+            <p class="card-text">La Pokedex de Alola.</p>
+            <a href="#" onclick="mostrarRegion('alola')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/galar.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Galar</h5>
+            <p class="card-text">La Pokedex de Galar.</p>
+            <a href="#" onclick="mostrarRegion('galar')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/paldea.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Paldea</h5>
+            <p class="card-text">La Pokedex de Paldea.</p>
+            <a href="#" onclick="mostrarRegion('paldea')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/hisui.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hisui</h5>
+            <p class="card-text">La Pokedex de Hisui.</p>
+            <a href="#" onclick="mostrarRegion('hisui')" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="datosRegiones"></div>
+</div>
+<div id="pokemons">
+  <h1 class="text-center">Selecciona la generación Pokemon que quieras revisar o bien seleccionalos a todos.</h1>
+  <br>
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/kanto.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Gen 1</h5>
+            <p class="card-text">Loa Pokedex de Kanto</p>
+            <a href="#" onclick="tarjetasGens(1)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/johto.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Gen 2</h5>
+            <p class="card-text">La Pokedex de Johto.</p>
+            <a href="#" onclick="tarjetasGens(2)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/hoenn.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Gen 3</h5>
+            <p class="card-text">La Pokedex de Hoenn.</p>
+            <a href="#" onclick="tarjetasGens(3)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/sinnoh.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Gen 4</h5>
+            <p class="card-text">La Pokedex de Sinnoh.</p>
+            <a href="#" onclick="tarjetasGens(4)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/unova.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Gen 5</h5>
+            <p class="card-text">La Pokedex de Unova.</p>
+            <a href="#" onclick="tarjetasGens(5)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/kalos.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Gen 6</h5>
+            <p class="card-text">La Pokedex de Kalos.</p>
+            <a href="#" onclick="tarjetasGens(6)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/alola.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Gen 7</h5>
+            <p class="card-text">La Pokedex de Alola.</p>
+            <a href="#" onclick="tarjetasGens(7)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/galar.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Gen 8</h5>
+            <p class="card-text">La Pokedex de Galar.</p>
+            <a href="#" onclick="tarjetasGens(8)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/paldea.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Gen 9</h5>
+            <p class="card-text">La Pokedex de Paldea.</p>
+            <a href="#" onclick="tarjetasGens(9)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/hisui.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Hisui</h5>
+            <p class="card-text">La Pokedex de Hisui.</p>
+            <a href="#" onclick="tarjetasGens(10)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/pokemon.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Otros</h5>
+            <p class="card-text">Pokemon Singulares.</p>
+            <a href="#" onclick="tarjetasGens(11)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src="/assets/images/pokemon.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Todos</h5>
+            <p class="card-text">Todos los Pokemon.</p>
+            <a href="#" onclick="generarTarjetas(genCatchThemAllDetails)" class="btn btn-primary">Ir</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="tarjetasPoke"></div>
+
+<footer>
+  <h3 class="text-center">Siguenos en Redes Sociales</h3>
+  <div id="sm">
+  <i class="fa-brands fa-facebook fa-xl"></i>
+  <i class="fa-brands fa-instagram fa-xl"></i>
+  <i class="fa-brands fa-x-twitter fa-xl"></i>
+  <i class="fa-brands fa-discord fa-xl"></i>
+  <i class="fa-brands fa-tiktok fa-xl"></i>
+  </div>
+  <div>
+    <p class="text-center">Content is available under Attribution-NonCommercial-ShareAlike 2.5.</p>
+  </div>
+</footer>
+
+          <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+          <script src="https://kit.fontawesome.com/7ee3973043.js" crossorigin="anonymous"></script>
+          <script src="/js/index.js" async defer></script>
+          <script src="/js/llamadas.js" async defer></script>
+    </body>
+</html>

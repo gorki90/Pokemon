@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
+/* colores
+principal: #F5F5F5;
+secun: #F05454,
+terci: #30475E
+fondo: #121212 */
+
+body {
+    margin: 0;
+    padding: 0%;
+    background-color: #121212;
+    font-family:"Comic Neue" ,sans-serif;
+    font-size: larger;
+    color: #F5F5F5;
+}
+
+.navbar{
+    top: 0;
+    background-color:#F05454;
+    position: sticky;
+    z-index: 100;
+    transition: background-color 0.5s ease;
+    margin-top: 1rem;
+}
+
+.nav-item{
+margin-left:1rem;
+margin-right: 1rem;
+}
+
+.nav-link{
+    color:#F5F5F5
+    }
+
+    .nav-link:hover, active:hover{
+        color:#30475E
+        }    
+
+.card-container {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    flex-wrap: wrap;
+}
+
+.card{
+    position: relative;
+    background:#30475E;
+    flex-wrap: wrap; 
+    margin-bottom: 1rem;
+}
+
+.card-title{
+    color:#F5F5F5;
+    font-size: xx-large;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; 
+}
+
+.paginationa,.page-link{
+    color: #30475E;
+}
+
+.paginationa:hover,.page-link:hover{
+    background-color: #F05454;
+    color: #30475E;
+}
+
+
+
+#intro{
+    width: 100%;
+    border-radius: 50px;
+    align-items: center;
+    
+}
+
+#intro2{
+    width: 100%;
+    border-radius: 50px;
+    align-items: center;
+}
+
+.btn{
+    width: 80%;
+    background: #F05454;
+    color: #F5F5F5;
+    border-radius: 50px;
+    border-color:#30475E;
+}
+
+.btn:hover{
+    width: 80%;
+    background: #30475E;
+    color:#F05454;
+    border-radius: 50px;
+}
+
+.container{
+    margin: 0%;
+    padding: 0%;
+    display:contents;
+}
+
+.row{
+    margin: 0%;
+    padding: 0%;
+}
+
+.col-md-6{
+    margin: 0%;
+    padding: 0%;
+}
+
+.pokefoto{
+width: 50%;
+height: 50%;
+}
+
+.pokefoto:hover{
+    scale: 1.2;
+}
+
+.pokeDatos{
+    text-align: center;
+}
+
+.pokeDatos:hover{
+    background-color: #F05454;
+}
+
+
+.btnDetalles{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    background-color: #F05454;
+    color: #F5F5F5;
+}
+
+#pokemons{
+    display: none;
+}
+
+#tarjetasPoke ul{
+    list-style: none;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#tarjetasPoke li{
+    display: inline-block;
+    margin-right: 10px;
+    text-align: center;
+    flex: 1;
+}
+
+#tarjetasPoke li:hover{
+    scale: 1.2;
+    color: #F05454;
+}
+
+#tarjetasPoke{
+    display: none;
+}
+
+#regiones{
+    display: none;
+}
+
+#datosRegiones{
+    display: none;
+}
+
+.climaContainer{
+    background-color: rgba(48, 71, 94, 0.5);
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+
+}
+
+.climaContainer p{
+    margin-left: 2rem;
+}
+
+.climaContainer p:hover{
+    color: #F05454;
+}
+
+.climaContainer h3:hover{
+    color: #F05454;
+}
+
+.climaContainer img:hover{
+    scale: 1.5;
+}
+
+.nombreRegion{
+     margin-bottom: 2rem;
+}
+
+.pokedex{
+    margin-top: 2rem;
+}
+
+footer{
+    padding: 0;
+    margin-top: 2rem;
+    background-color: #30475E;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+#sm{
+margin-top: 4rem;
+margin-bottom: 2rem;
+height: 2rem;
+display: flex;
+align-content: stretch;
+background-color: #30475E;
+flex-direction: row;
+justify-content: space-evenly;
+align-items: baseline;
+}
+
+#sm .fa-brands:hover {
+    color: #F05454;
+}
+
+.nombreMove{
+    color: #F05454;
+}
+
+.movimientos div:hover{
+    background-color: #121212;
+}
+
+
