@@ -136,7 +136,7 @@ let nombreRegion1=regions[region1].name;
 let nombreRegion1Capitalizado=capitalizarPrimeraLetra(nombreRegion1);
 nombreReg1.innerText=nombreRegion1Capitalizado;
 let fotReg1=document.getElementById("fotReg1");
-fotReg1.src="/assets/images/"+regions[region1].name+".png";
+fotReg1.src="assets/images/"+regions[region1].name+".png";
 
 regreandom1.addEventListener("click",function(){
     let regionSeleccionada = regions[region1].name;
@@ -149,7 +149,7 @@ let nombreRegion2=regions[region2].name;
 let nombreRegion2Capitalizado=capitalizarPrimeraLetra(nombreRegion2);
 nombreReg2.innerText=nombreRegion2Capitalizado;
 let fotReg2=document.getElementById("fotReg2");
-fotReg2.src="/assets/images/"+regions[region2].name+".png";
+fotReg2.src="assets/images/"+regions[region2].name+".png";
 
 regreandom2.addEventListener("click",function(){
     let regionSeleccionada = regions[region2].name;
@@ -162,7 +162,7 @@ let nombreRegion3=regions[region3].name;
 let nombreRegion3Capitalizado=capitalizarPrimeraLetra(nombreRegion3);
 nombreReg3.innerText=nombreRegion3Capitalizado;
 let fotReg3=document.getElementById("fotReg3");
-fotReg3.src="/assets/images/"+regions[region3].name+".png";
+fotReg3.src="assets/images/"+regions[region3].name+".png";
 
 regreandom3.addEventListener("click",function(){
     let regionSeleccionada = regions[region3].name;
@@ -265,7 +265,7 @@ function mostrarDetallesPokemon(pokeEspecifico) {
     foto.classList.add('pokefoto', 'img-fluid');
 
     const foto2 = document.createElement('img', "img-fluid");
-    foto2.src = pokeEspecifico.sprites.back_default ? pokeEspecifico.sprites.back_default : '/assets/images/black.png'
+    foto2.src = pokeEspecifico.sprites.back_default ? pokeEspecifico.sprites.back_default : 'assets/images/black.png'
     foto2.classList.add('pokefoto');
 
     const nombre = document.createElement('h1');
