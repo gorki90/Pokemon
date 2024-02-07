@@ -511,7 +511,7 @@ function mostrarRegion(region){
     detallesRegiones.append(nombre);
 
 let foto=document.createElement("img");
-foto.src="/assets/images/"+region+".png";
+foto.src="assets/images/"+region+".png";
 foto.classList.add("img-fluid", "rounded");
 detallesRegiones.append(foto);
 
